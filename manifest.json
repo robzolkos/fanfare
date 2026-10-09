@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "rzolkos.fanfare",
+  "name": "Fanfare",
+  "version": "0.1.0",
+  "author": "Rob Zolkos",
+  "license": "MIT",
+  "description": "The boosts you've received in Basecamp, newest first, through the Basecamp CLI.",
+  "kinds": [
+    "service",
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "service": "Service.qml",
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Fanfare",
+    "description": "Your latest Basecamp boosts, with a toast when new ones arrive.",
+    "category": "Communication",
+    "aliases": [
+      "fanfare",
+      "boosts",
+      "basecamp",
+      "reactions"
+    ],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "notify": true,
+      "refreshIntervalSec": 300,
+      "sound": false
+    },
+    "schema": [
+      {
+        "key": "notify",
+        "type": "boolean",
+        "label": "Notifications for new boosts",
+        "defaultValue": true
+      },
+      {
+        "key": "sound",
+        "type": "boolean",
+        "label": "Play a fanfare for new boosts",
+        "defaultValue": false
+      },
+      {
+        "key": "refreshIntervalSec",
+        "type": "integer",
+        "label": "Poll interval (seconds)",
+        "min": 60,
+        "max": 3600,
+        "step": 60,
+        "defaultValue": 300
+      }
+    ]
+  }
+}
